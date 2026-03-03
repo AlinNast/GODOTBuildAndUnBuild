@@ -1,0 +1,341 @@
+[gd_scene load_steps=6 format=3 uid="uid://q4f0typs6s23"]
+
+[ext_resource type="Script" uid="uid://ya03qssrlo32" path="res://Floor.cs" id="1_bw3m6"]
+[ext_resource type="Script" uid="uid://b1qj03ngl5n42" path="res://Row.cs" id="2_bhu08"]
+[ext_resource type="PackedScene" uid="uid://hnpyo1h38fmj" path="res://cube.tscn" id="3_05as6"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_6nngp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bw3m6"]
+albedo_color = Color(0.15727392, 0.15727395, 0.15727395, 1)
+
+[node name="MainLevel" type="Node3D"]
+
+[node name="Floor" type="Node3D" parent="."]
+script = ExtResource("1_bw3m6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(26, 0, 0, 0, 0.407, 0, 0, 0, 30, 0, 0, 0)
+mesh = SubResource("BoxMesh_6nngp")
+surface_material_override/0 = SubResource("StandardMaterial3D_bw3m6")
+
+[node name="Row" type="Node3D" parent="Floor" node_paths=PackedStringArray("cubes")]
+transform = Transform3D(2.965, 0, 0, 0, 2.965, 0, 0, 0, 2.965, -12.3036375, 0, 0)
+script = ExtResource("2_bhu08")
+cubes = []
+
+[node name="Cube" parent="Floor/Row" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, 4.557563)
+
+[node name="Cube2" parent="Floor/Row" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, 3.5482934)
+
+[node name="Cube3" parent="Floor/Row" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, 2.529359)
+
+[node name="Cube4" parent="Floor/Row" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, 1.5200893)
+
+[node name="Cube5" parent="Floor/Row" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, 0.5091821)
+
+[node name="Cube6" parent="Floor/Row" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, -0.5000876)
+
+[node name="Cube7" parent="Floor/Row" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, -1.510207)
+
+[node name="Cube8" parent="Floor/Row" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, -2.5194767)
+
+[node name="Cube9" parent="Floor/Row" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, -3.538411)
+
+[node name="Cube10" parent="Floor/Row" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, -4.547681)
+
+[node name="Row2" type="Node3D" parent="Floor" node_paths=PackedStringArray("cubes")]
+transform = Transform3D(2.965, 0, 0, 0, 2.965, 0, 0, 0, 2.965, -9.207306, 0, 0)
+script = ExtResource("2_bhu08")
+cubes = []
+
+[node name="Cube" parent="Floor/Row2" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, 4.557563)
+
+[node name="Cube2" parent="Floor/Row2" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, 3.5482934)
+
+[node name="Cube3" parent="Floor/Row2" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, 2.529359)
+
+[node name="Cube4" parent="Floor/Row2" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, 1.5200893)
+
+[node name="Cube5" parent="Floor/Row2" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, 0.5091821)
+
+[node name="Cube6" parent="Floor/Row2" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, -0.5000876)
+
+[node name="Cube7" parent="Floor/Row2" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, -1.510207)
+
+[node name="Cube8" parent="Floor/Row2" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, -2.5194767)
+
+[node name="Cube9" parent="Floor/Row2" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, -3.538411)
+
+[node name="Cube10" parent="Floor/Row2" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, -4.547681)
+
+[node name="Row3" type="Node3D" parent="Floor" node_paths=PackedStringArray("cubes")]
+transform = Transform3D(2.965, 0, 0, 0, 2.965, 0, 0, 0, 2.965, -6.1100197, 0, 0)
+script = ExtResource("2_bhu08")
+cubes = []
+
+[node name="Cube" parent="Floor/Row3" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, 4.557563)
+
+[node name="Cube2" parent="Floor/Row3" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, 3.5482934)
+
+[node name="Cube3" parent="Floor/Row3" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, 2.529359)
+
+[node name="Cube4" parent="Floor/Row3" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, 1.5200893)
+
+[node name="Cube5" parent="Floor/Row3" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, 0.5091821)
+
+[node name="Cube6" parent="Floor/Row3" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, -0.5000876)
+
+[node name="Cube7" parent="Floor/Row3" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, -1.510207)
+
+[node name="Cube8" parent="Floor/Row3" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, -2.5194767)
+
+[node name="Cube9" parent="Floor/Row3" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, -3.538411)
+
+[node name="Cube10" parent="Floor/Row3" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, -4.547681)
+
+[node name="Row4" type="Node3D" parent="Floor" node_paths=PackedStringArray("cubes")]
+transform = Transform3D(2.965, 0, 0, 0, 2.965, 0, 0, 0, 2.965, -3.0246763, 0, 0)
+script = ExtResource("2_bhu08")
+cubes = []
+
+[node name="Cube" parent="Floor/Row4" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, 4.557563)
+
+[node name="Cube2" parent="Floor/Row4" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, 3.5482934)
+
+[node name="Cube3" parent="Floor/Row4" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, 2.529359)
+
+[node name="Cube4" parent="Floor/Row4" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, 1.5200893)
+
+[node name="Cube5" parent="Floor/Row4" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, 0.5091821)
+
+[node name="Cube6" parent="Floor/Row4" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, -0.5000876)
+
+[node name="Cube7" parent="Floor/Row4" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, -1.510207)
+
+[node name="Cube8" parent="Floor/Row4" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, -2.5194767)
+
+[node name="Cube9" parent="Floor/Row4" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, -3.538411)
+
+[node name="Cube10" parent="Floor/Row4" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, -4.547681)
+
+[node name="Row5" type="Node3D" parent="Floor" node_paths=PackedStringArray("cubes")]
+transform = Transform3D(2.965, 0, 0, 0, 2.965, 0, 0, 0, 2.965, 0.07165527, 0, 0)
+script = ExtResource("2_bhu08")
+cubes = []
+
+[node name="Cube" parent="Floor/Row5" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, 4.557563)
+
+[node name="Cube2" parent="Floor/Row5" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, 3.5482934)
+
+[node name="Cube3" parent="Floor/Row5" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, 2.529359)
+
+[node name="Cube4" parent="Floor/Row5" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, 1.5200893)
+
+[node name="Cube5" parent="Floor/Row5" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, 0.5091821)
+
+[node name="Cube6" parent="Floor/Row5" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, -0.5000876)
+
+[node name="Cube7" parent="Floor/Row5" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, -1.510207)
+
+[node name="Cube8" parent="Floor/Row5" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, -2.5194767)
+
+[node name="Cube9" parent="Floor/Row5" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, -3.538411)
+
+[node name="Cube10" parent="Floor/Row5" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, -4.547681)
+
+[node name="Row6" type="Node3D" parent="Floor" node_paths=PackedStringArray("cubes")]
+transform = Transform3D(2.965, 0, 0, 0, 2.965, 0, 0, 0, 2.965, 3.1689415, 0, 0)
+script = ExtResource("2_bhu08")
+cubes = []
+
+[node name="Cube" parent="Floor/Row6" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, 4.557563)
+
+[node name="Cube2" parent="Floor/Row6" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, 3.5482934)
+
+[node name="Cube3" parent="Floor/Row6" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, 2.529359)
+
+[node name="Cube4" parent="Floor/Row6" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, 1.5200893)
+
+[node name="Cube5" parent="Floor/Row6" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, 0.5091821)
+
+[node name="Cube6" parent="Floor/Row6" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, -0.5000876)
+
+[node name="Cube7" parent="Floor/Row6" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, -1.510207)
+
+[node name="Cube8" parent="Floor/Row6" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, -2.5194767)
+
+[node name="Cube9" parent="Floor/Row6" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, -3.538411)
+
+[node name="Cube10" parent="Floor/Row6" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, -4.547681)
+
+[node name="Row7" type="Node3D" parent="Floor" node_paths=PackedStringArray("cubes")]
+transform = Transform3D(2.965, 0, 0, 0, 2.965, 0, 0, 0, 2.965, 6.2104554, 0, 0)
+script = ExtResource("2_bhu08")
+cubes = []
+
+[node name="Cube" parent="Floor/Row7" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, 4.557563)
+
+[node name="Cube2" parent="Floor/Row7" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, 3.5482934)
+
+[node name="Cube3" parent="Floor/Row7" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, 2.529359)
+
+[node name="Cube4" parent="Floor/Row7" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, 1.5200893)
+
+[node name="Cube5" parent="Floor/Row7" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, 0.5091821)
+
+[node name="Cube6" parent="Floor/Row7" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, -0.5000876)
+
+[node name="Cube7" parent="Floor/Row7" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, -1.510207)
+
+[node name="Cube8" parent="Floor/Row7" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, -2.5194767)
+
+[node name="Cube9" parent="Floor/Row7" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, -3.538411)
+
+[node name="Cube10" parent="Floor/Row7" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, -4.547681)
+
+[node name="Row8" type="Node3D" parent="Floor" node_paths=PackedStringArray("cubes")]
+transform = Transform3D(2.965, 0, 0, 0, 2.965, 0, 0, 0, 2.965, 9.242931, 0, 0)
+script = ExtResource("2_bhu08")
+cubes = []
+
+[node name="Cube" parent="Floor/Row8" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, 4.557563)
+
+[node name="Cube2" parent="Floor/Row8" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, 3.5482934)
+
+[node name="Cube3" parent="Floor/Row8" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, 2.529359)
+
+[node name="Cube4" parent="Floor/Row8" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, 1.5200893)
+
+[node name="Cube5" parent="Floor/Row8" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, 0.5091821)
+
+[node name="Cube6" parent="Floor/Row8" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, -0.5000876)
+
+[node name="Cube7" parent="Floor/Row8" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, -1.510207)
+
+[node name="Cube8" parent="Floor/Row8" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, -2.5194767)
+
+[node name="Cube9" parent="Floor/Row8" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, -3.538411)
+
+[node name="Cube10" parent="Floor/Row8" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, -4.547681)
+
+[node name="Row9" type="Node3D" parent="Floor" node_paths=PackedStringArray("cubes")]
+transform = Transform3D(2.965, 0, 0, 0, 2.965, 0, 0, 0, 2.965, 12.254654, 0, 0)
+script = ExtResource("2_bhu08")
+cubes = []
+
+[node name="Cube" parent="Floor/Row9" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, 4.557563)
+
+[node name="Cube2" parent="Floor/Row9" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, 3.5482934)
+
+[node name="Cube3" parent="Floor/Row9" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, 2.529359)
+
+[node name="Cube4" parent="Floor/Row9" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, 1.5200893)
+
+[node name="Cube5" parent="Floor/Row9" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, 0.5091821)
+
+[node name="Cube6" parent="Floor/Row9" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, -0.5000876)
+
+[node name="Cube7" parent="Floor/Row9" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, -1.510207)
+
+[node name="Cube8" parent="Floor/Row9" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, -2.5194767)
+
+[node name="Cube9" parent="Floor/Row9" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, -3.538411)
+
+[node name="Cube10" parent="Floor/Row9" instance=ExtResource("3_05as6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, -4.547681)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.021277077, -0.8748855, 0.48386243, 0.028247364, 0.48430437, 0.87444335, -0.9993745, -0.0049377326, 0.035017885, 11.71016, 14.273363, 1.1644323)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.8547543, -0.38729963, 0.34553432, 0.04717076, 0.7209383, 0.691392, -0.51688486, -0.5746712, 0.6344943, 5.9118443, 9.311799, 15.970436)

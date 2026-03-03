@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://hnpyo1h38fmj"]
+
+[ext_resource type="Script" uid="uid://dq0a25265jtve" path="res://Cube.cs" id="1_jbd7x"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_xc3wn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jbd7x"]
+
+[node name="Cube" type="Area3D" node_paths=PackedStringArray("theCube")]
+script = ExtResource("1_jbd7x")
+theCube = NodePath("CubeMesh")
+
+[node name="CubeMesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_xc3wn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_jbd7x")
+
+[connection signal="mouse_entered" from="." to="." method="OnHover"]
+[connection signal="mouse_exited" from="." to="." method="OnNotHover"]
