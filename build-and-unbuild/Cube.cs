@@ -1,13 +1,12 @@
 using Godot;
-using System;
 
 public partial class Cube : Area3D
 {
 	[Export]
-	MeshInstance3D theCube;
+	public MeshInstance3D theCube;
 
 	private bool canBeClicked = false;
-	private bool isActive = true;
+	public bool isActive = true;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -41,6 +40,7 @@ public partial class Cube : Area3D
 	{
 		isActive = true;
 		theCube.Visible = true;
+		Commander.Instance.AddCommand(new ActivateCube(this));
 	}
 
     public void Deactivate()

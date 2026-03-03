@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://q4f0typs6s23"]
+[gd_scene load_steps=7 format=3 uid="uid://q4f0typs6s23"]
 
 [ext_resource type="Script" uid="uid://ya03qssrlo32" path="res://Floor.cs" id="1_bw3m6"]
 [ext_resource type="Script" uid="uid://b1qj03ngl5n42" path="res://Row.cs" id="2_bhu08"]
 [ext_resource type="PackedScene" uid="uid://hnpyo1h38fmj" path="res://cube.tscn" id="3_05as6"]
+[ext_resource type="Script" uid="uid://i78co24fvx4h" path="res://Commander.cs" id="4_05as6"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_6nngp"]
 
@@ -339,3 +340,6 @@ transform = Transform3D(0.021277077, -0.8748855, 0.48386243, 0.028247364, 0.4843
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.8547543, -0.38729963, 0.34553432, 0.04717076, 0.7209383, 0.691392, -0.51688486, -0.5746712, 0.6344943, 5.9118443, 9.311799, 15.970436)
+
+[node name="Commander" type="Node" parent="."]
+script = ExtResource("4_05as6")
