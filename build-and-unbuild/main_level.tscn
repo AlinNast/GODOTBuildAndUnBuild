@@ -1,19 +1,36 @@
-[gd_scene load_steps=7 format=3 uid="uid://q4f0typs6s23"]
+[gd_scene load_steps=9 format=3 uid="uid://q4f0typs6s23"]
 
 [ext_resource type="Script" uid="uid://ya03qssrlo32" path="res://Floor.cs" id="1_bw3m6"]
 [ext_resource type="Script" uid="uid://b1qj03ngl5n42" path="res://Row.cs" id="2_bhu08"]
 [ext_resource type="PackedScene" uid="uid://hnpyo1h38fmj" path="res://cube.tscn" id="3_05as6"]
 [ext_resource type="Script" uid="uid://i78co24fvx4h" path="res://Commander.cs" id="4_05as6"]
+[ext_resource type="Script" uid="uid://dnfl6r3308qqw" path="res://Builder.cs" id="5_5ymk8"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_6nngp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bw3m6"]
 albedo_color = Color(0.15727392, 0.15727395, 0.15727395, 1)
 
+[sub_resource type="Environment" id="Environment_5ymk8"]
+reflected_light_source = 2
+glow_enabled = true
+fog_sun_scatter = 0.11
+fog_density = 0.0235
+volumetric_fog_density = 0.0227
+volumetric_fog_albedo = Color(0.6120363, 0.61203635, 0.6120363, 1)
+volumetric_fog_emission = Color(0.14767182, 0.14767179, 0.14767179, 1)
+
 [node name="MainLevel" type="Node3D"]
 
-[node name="Floor" type="Node3D" parent="."]
+[node name="Builder" type="Node" parent="."]
+script = ExtResource("5_5ymk8")
+
+[node name="Commander" type="Node" parent="."]
+script = ExtResource("4_05as6")
+
+[node name="Floor" type="Node3D" parent="." node_paths=PackedStringArray("rows")]
 script = ExtResource("1_bw3m6")
+rows = [NodePath("Row"), NodePath("Row2"), NodePath("Row3"), NodePath("Row4"), NodePath("Row5"), NodePath("Row6"), NodePath("Row7"), NodePath("Row8"), NodePath("Row9")]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
 transform = Transform3D(26, 0, 0, 0, 0.407, 0, 0, 0, 30, 0, 0, 0)
@@ -23,7 +40,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_bw3m6")
 [node name="Row" type="Node3D" parent="Floor" node_paths=PackedStringArray("cubes")]
 transform = Transform3D(2.965, 0, 0, 0, 2.965, 0, 0, 0, 2.965, -12.3036375, 0, 0)
 script = ExtResource("2_bhu08")
-cubes = []
+cubes = [NodePath("Cube"), NodePath("Cube2"), NodePath("Cube3"), NodePath("Cube4"), NodePath("Cube5"), NodePath("Cube6"), NodePath("Cube7"), NodePath("Cube8"), NodePath("Cube9"), NodePath("Cube10")]
 
 [node name="Cube" parent="Floor/Row" instance=ExtResource("3_05as6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, 4.557563)
@@ -58,7 +75,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, -4.547681)
 [node name="Row2" type="Node3D" parent="Floor" node_paths=PackedStringArray("cubes")]
 transform = Transform3D(2.965, 0, 0, 0, 2.965, 0, 0, 0, 2.965, -9.207306, 0, 0)
 script = ExtResource("2_bhu08")
-cubes = []
+cubes = [NodePath("Cube"), NodePath("Cube2"), NodePath("Cube3"), NodePath("Cube4"), NodePath("Cube5"), NodePath("Cube6"), NodePath("Cube7"), NodePath("Cube8"), NodePath("Cube9"), NodePath("Cube10")]
 
 [node name="Cube" parent="Floor/Row2" instance=ExtResource("3_05as6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, 4.557563)
@@ -93,7 +110,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, -4.547681)
 [node name="Row3" type="Node3D" parent="Floor" node_paths=PackedStringArray("cubes")]
 transform = Transform3D(2.965, 0, 0, 0, 2.965, 0, 0, 0, 2.965, -6.1100197, 0, 0)
 script = ExtResource("2_bhu08")
-cubes = []
+cubes = [NodePath("Cube"), NodePath("Cube2"), NodePath("Cube3"), NodePath("Cube4"), NodePath("Cube5"), NodePath("Cube6"), NodePath("Cube7"), NodePath("Cube8"), NodePath("Cube9"), NodePath("Cube10")]
 
 [node name="Cube" parent="Floor/Row3" instance=ExtResource("3_05as6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, 4.557563)
@@ -128,7 +145,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, -4.547681)
 [node name="Row4" type="Node3D" parent="Floor" node_paths=PackedStringArray("cubes")]
 transform = Transform3D(2.965, 0, 0, 0, 2.965, 0, 0, 0, 2.965, -3.0246763, 0, 0)
 script = ExtResource("2_bhu08")
-cubes = []
+cubes = [NodePath("Cube"), NodePath("Cube2"), NodePath("Cube3"), NodePath("Cube4"), NodePath("Cube5"), NodePath("Cube6"), NodePath("Cube7"), NodePath("Cube8"), NodePath("Cube9"), NodePath("Cube10")]
 
 [node name="Cube" parent="Floor/Row4" instance=ExtResource("3_05as6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, 4.557563)
@@ -163,7 +180,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, -4.547681)
 [node name="Row5" type="Node3D" parent="Floor" node_paths=PackedStringArray("cubes")]
 transform = Transform3D(2.965, 0, 0, 0, 2.965, 0, 0, 0, 2.965, 0.07165527, 0, 0)
 script = ExtResource("2_bhu08")
-cubes = []
+cubes = [NodePath("Cube"), NodePath("Cube2"), NodePath("Cube3"), NodePath("Cube4"), NodePath("Cube5"), NodePath("Cube6"), NodePath("Cube7"), NodePath("Cube8"), NodePath("Cube9"), NodePath("Cube10")]
 
 [node name="Cube" parent="Floor/Row5" instance=ExtResource("3_05as6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, 4.557563)
@@ -198,7 +215,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, -4.547681)
 [node name="Row6" type="Node3D" parent="Floor" node_paths=PackedStringArray("cubes")]
 transform = Transform3D(2.965, 0, 0, 0, 2.965, 0, 0, 0, 2.965, 3.1689415, 0, 0)
 script = ExtResource("2_bhu08")
-cubes = []
+cubes = [NodePath("Cube"), NodePath("Cube2"), NodePath("Cube3"), NodePath("Cube4"), NodePath("Cube5"), NodePath("Cube6"), NodePath("Cube7"), NodePath("Cube8"), NodePath("Cube9"), NodePath("Cube10")]
 
 [node name="Cube" parent="Floor/Row6" instance=ExtResource("3_05as6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, 4.557563)
@@ -233,7 +250,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, -4.547681)
 [node name="Row7" type="Node3D" parent="Floor" node_paths=PackedStringArray("cubes")]
 transform = Transform3D(2.965, 0, 0, 0, 2.965, 0, 0, 0, 2.965, 6.2104554, 0, 0)
 script = ExtResource("2_bhu08")
-cubes = []
+cubes = [NodePath("Cube"), NodePath("Cube2"), NodePath("Cube3"), NodePath("Cube4"), NodePath("Cube5"), NodePath("Cube6"), NodePath("Cube7"), NodePath("Cube8"), NodePath("Cube9"), NodePath("Cube10")]
 
 [node name="Cube" parent="Floor/Row7" instance=ExtResource("3_05as6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, 4.557563)
@@ -268,7 +285,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, -4.547681)
 [node name="Row8" type="Node3D" parent="Floor" node_paths=PackedStringArray("cubes")]
 transform = Transform3D(2.965, 0, 0, 0, 2.965, 0, 0, 0, 2.965, 9.242931, 0, 0)
 script = ExtResource("2_bhu08")
-cubes = []
+cubes = [NodePath("Cube"), NodePath("Cube2"), NodePath("Cube3"), NodePath("Cube4"), NodePath("Cube5"), NodePath("Cube6"), NodePath("Cube7"), NodePath("Cube8"), NodePath("Cube9"), NodePath("Cube10")]
 
 [node name="Cube" parent="Floor/Row8" instance=ExtResource("3_05as6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, 4.557563)
@@ -303,7 +320,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, -4.547681)
 [node name="Row9" type="Node3D" parent="Floor" node_paths=PackedStringArray("cubes")]
 transform = Transform3D(2.965, 0, 0, 0, 2.965, 0, 0, 0, 2.965, 12.254654, 0, 0)
 script = ExtResource("2_bhu08")
-cubes = []
+cubes = [NodePath("Cube"), NodePath("Cube2"), NodePath("Cube3"), NodePath("Cube4"), NodePath("Cube5"), NodePath("Cube6"), NodePath("Cube7"), NodePath("Cube8"), NodePath("Cube9"), NodePath("Cube10")]
 
 [node name="Cube" parent="Floor/Row9" instance=ExtResource("3_05as6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9073486e-06, 4.557563)
@@ -341,5 +358,20 @@ transform = Transform3D(0.021277077, -0.8748855, 0.48386243, 0.028247364, 0.4843
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.8547543, -0.38729963, 0.34553432, 0.04717076, 0.7209383, 0.691392, -0.51688486, -0.5746712, 0.6344943, 5.9118443, 9.311799, 15.970436)
 
-[node name="Commander" type="Node" parent="."]
-script = ExtResource("4_05as6")
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_5ymk8")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Press Left Click to make a cube."
+
+[node name="Label2" type="Label" parent="CanvasLayer"]
+offset_top = 37.0
+offset_right = 267.0
+offset_bottom = 112.0
+text = "Press Right Click to remove a Cube
+
+Press Z to undo"

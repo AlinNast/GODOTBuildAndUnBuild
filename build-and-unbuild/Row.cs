@@ -4,7 +4,7 @@ using System;
 public partial class Row : Node3D
 {
 	[Export]
-	public MeshInstance3D[] cubes;
+	public Cube[] cubes;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{

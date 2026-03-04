@@ -6,12 +6,14 @@ public partial class Cube : Area3D
 	public MeshInstance3D theCube;
 
 	private bool canBeClicked = false;
+	[Export]
 	public bool isActive = true;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-	}
+        
+    }
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
@@ -38,6 +40,7 @@ public partial class Cube : Area3D
 
 	public void Activate()
 	{
+		Builder.Instance.BuildCube(this);
 		isActive = true;
 		theCube.Visible = true;
 		Commander.Instance.AddCommand(new ActivateCube(this));
@@ -47,5 +50,6 @@ public partial class Cube : Area3D
     {
         isActive = false;
         theCube.Visible = false;
+		Commander.Instance.AddCommand(new DeActivateCube(this));
     }
 }
