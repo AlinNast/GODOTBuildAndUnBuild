@@ -40,7 +40,8 @@ public partial class Cube : Area3D
 
 	public void Activate()
 	{
-		Builder.Instance.BuildCube(this);
+		Builder builder = new Builder();
+		this.theCube = builder.BuildCube(this).theCube;
 		isActive = true;
 		theCube.Visible = true;
 		Commander.Instance.AddCommand(new ActivateCube(this));

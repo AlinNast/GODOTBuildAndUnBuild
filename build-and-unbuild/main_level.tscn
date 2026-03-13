@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://q4f0typs6s23"]
+[gd_scene load_steps=8 format=3 uid="uid://q4f0typs6s23"]
 
 [ext_resource type="Script" uid="uid://ya03qssrlo32" path="res://Floor.cs" id="1_bw3m6"]
 [ext_resource type="Script" uid="uid://b1qj03ngl5n42" path="res://Row.cs" id="2_bhu08"]
 [ext_resource type="PackedScene" uid="uid://hnpyo1h38fmj" path="res://cube.tscn" id="3_05as6"]
 [ext_resource type="Script" uid="uid://i78co24fvx4h" path="res://Commander.cs" id="4_05as6"]
-[ext_resource type="Script" uid="uid://dnfl6r3308qqw" path="res://Builder.cs" id="5_5ymk8"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_6nngp"]
 
@@ -21,9 +20,6 @@ volumetric_fog_albedo = Color(0.6120363, 0.61203635, 0.6120363, 1)
 volumetric_fog_emission = Color(0.14767182, 0.14767179, 0.14767179, 1)
 
 [node name="MainLevel" type="Node3D"]
-
-[node name="Builder" type="Node" parent="."]
-script = ExtResource("5_5ymk8")
 
 [node name="Commander" type="Node" parent="."]
 script = ExtResource("4_05as6")

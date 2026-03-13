@@ -3,41 +3,34 @@ using System;
 
 
 
-public partial class Builder : Node
+public partial class Builder
 {
-    // The static reference to the one and only instance
-    public static Builder Instance { get; private set; }
 
-    public override void _Ready()
+
+
+    public Cube BuildCube(Cube cube)
     {
-        // Singleton Enforcement
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-    }
-
-
-    public void BuildCube(Cube cube)
-    {
-        GiveCubeColour(cube);
+        Cube _cube = cube;
+        GiveCubeColour(_cube);
 
         if (GD.Randf() > 0.5f)
         {
-            GiveCubeEmmision(cube);
+            GiveCubeEmmision(_cube);
         }
         if (GD.Randf() > 0.3f)
         {
-            GiveCubeMetal(cube);
+            GiveCubeMetal(_cube);
         }
         if (GD.Randf() > 0.7f)
         {
-            GiveCubeGrow(cube);
+            GiveCubeGrow(_cube);
         }
         if (GD.Randf() > 0.7f)
         {
-            GiveCubeOutline(cube);
+            GiveCubeOutline(_cube);
         }
+        
+        return _cube;
     }
 
     private void GiveCubeColour(Cube cube)
